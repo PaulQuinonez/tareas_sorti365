@@ -39,7 +39,7 @@ export class TaskDashboardComponentComponent implements OnInit {
         this.contadorTaskTotal = this.tarea.length
 
         this.tarea.forEach((element: { estado: string; }) => {
-          if(element.estado === "In Progress"){
+          if(element.estado === "Pending"){
             this.contadorPending++
           }else if (element.estado === "Complete") {
             this.contadorComplete++;
