@@ -1,0 +1,26 @@
+<div class="login-container">
+  <img class="image-container" src="../../../../assets/img/login2.svg" alt="">
+  <div class="login-info-container">
+    <h1 class="title">Registro</h1>
+    <img src="../../../../assets/img/add-friend.png" alt="" width="100px">
+    <form class="inputs-container" #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+      <input class="input" style="margin-top: 9px;" type="text" placeholder="Nombres" id="nombres" #nombres="ngModel"
+        name="nombres" [(ngModel)]="user.nombres" required>
+      <input class="input" style="margin-top: 9px;" type="text" placeholder="Apellidos" id="apellidos"
+        #apellidos="ngModel" name="apellidos" [(ngModel)]="user.apellidos" required>
+      <input class="input" style="margin-top: 9px;" type="text" placeholder="Cedula" id="cedula" #cedula="ngModel"
+        name="cedula" [(ngModel)]="user.cedula" required>
+      <input class="input" style="margin-top: 9px;" type="tel" placeholder="Telefono" id="telefono" #telefono="ngModel"
+        name="telefono" [(ngModel)]="user.telefono" required>
+      <input class="input" style="margin-top: 9px;" type="email" placeholder="Correo" id="correo" #correo="ngModel"
+        name="correo" [(ngModel)]="user.correo" required>
+      <input class="input" style="margin-top: 9px; margin-bottom: 30px;" type="password" placeholder="*******"
+        id="password" #password="ngModel" name="password" [(ngModel)]="user.password" required>
+      <button class="btn">Registrarse</button>
+      <a routerLink="/login" style="text-decoration: none; color: #383538;">
+        <p>No tienes cuenta? <span class="span">Inicia Sesión</span></p>
+      </a>
+    </form>
+  </div>
+
+</div>

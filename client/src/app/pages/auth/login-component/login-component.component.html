@@ -1,0 +1,43 @@
+<div class="login-container">
+  <div class="login-info-container">
+    <img src="../../../../assets/img/user.png" alt="" width="100px">
+    <h1 class="title mt-3">Iniciar Sesión</h1>
+    <form class="inputs-container" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+      <input class="input" type="text" placeholder="Usuario" id="cedula" name="cedula" #cedula="ngModel"
+        [(ngModel)]="user.cedula" required>
+      <input class="input" type="password" placeholder="******" id="password" name="password" #password="ngModel"
+        [(ngModel)]="user.password" required>
+      <a href="" style="text-decoration: none; color: #383538;" data-bs-toggle="modal" data-bs-target="#modal-forgot-password">
+        <p>Olvidaste tu contraseña? <span class="span">Haz clic aqui!</span></p>
+      </a>
+      <button class="btn">Iniciar Sesión</button>
+      <a routerLink="/register" style="text-decoration: none; color: #383538;">
+        <p>No tienes cuenta? <span class="span">Registrate!</span></p>
+      </a>
+    </form>
+  </div>
+  <img class="image-container" src="../../../../assets/img/login2.svg" alt="">
+</div>
+
+<!-- MODAL FORGOTPASSWORD -->
+<div class="modal fade" id="modal-forgot-password" tabindex="-1" role="dialog" style="display: none;">
+  <form #forgotPasswordForm="ngForm" (ngSubmit)="forgot_password(forgotPasswordForm)">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+          <div class="modal-content">
+              <div class="modal-header bg-dark" style="color: #fff;">
+                  <h5 class="modal-title">Olvidaste tu contraseña?</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <div class="form-group mb-3">
+                      <input type="text" class="form-control" placeholder="Ingrese su correo" #email_user="ngModel" name="email_user" [(ngModel)]="email_userText" required>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="submit" class="btn btn-info text-white"  data-bs-dismiss="modal">Enviar Correo</button>
+              </div>
+          </div>
+      </div>
+  </form>
+</div>
+<!-- MODAL FORGOTPASSWORD -->

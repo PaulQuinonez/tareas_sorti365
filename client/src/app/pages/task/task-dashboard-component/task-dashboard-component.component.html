@@ -1,0 +1,70 @@
+<app-sidebar></app-sidebar>
+<section class="home-section">
+  <app-navbar></app-navbar>
+
+  <div class="home-content">
+    <div class="overview-boxes">
+      <div class="box">
+        <div class="right-side">
+          <div class="box-topic">Total Tareas</div>
+          <div class="number">{{contadorTaskTotal}}</div>
+        </div>
+        <i class='bx bx-task bx-tada task' style='color:#66b0ff'  ></i>
+      </div>
+      <div class="box">
+        <div class="right-side">
+          <div class="box-topic">Tareas Pendientes</div>
+          <div class="number">{{contadorPending}}</div>
+        </div>
+        <i class="fa-solid fa-spinner fa-spin task two" style="color: #2bd47d;"></i>
+      </div>
+      <div class="box">
+        <div class="right-side">
+          <div class="box-topic">Tareas Completadas</div>
+          <div class="number">{{contadorComplete}}</div>
+        </div>
+        <i class="fa-solid fa-circle-check fa-shake task three" style="color: #ffc233;"></i>
+      </div>
+      <div class="box">
+        <div class="right-side">
+          <div class="box-topic">Tareas Desechadas</div>
+          <div class="number">{{contadorTrashed}}</div>
+        </div>
+        <i class="fa-solid fa-trash fa-shake task four" style="color: #e05260;"></i>
+      </div>
+    </div>
+    <div class="details">
+      <div class="recentOrders">
+          <div class="cardHeader">
+              <h2>Tareas Recientes</h2>
+              <a routerLink="/task" class="btn">View All</a>
+          </div>
+
+          <table>
+              <thead>
+                  <tr>
+                      <td>Titulo</td>
+                      <td>Descripcion</td>
+                      <td>Dificultad</td>
+                      <td>Fecha</td>
+                  </tr>
+              </thead>
+
+              <tbody *ngFor="let item of tarea">
+                  <tr>
+                      <td>{{item.titulo}}</td>
+                      <td>{{item.descripcion}}</td>
+                      <td>
+                        <span *ngFor="let i of [].constructor(item.dificultad)">
+                          <i class="fa-solid fa-star" style="color: #00ff04;"></i>
+                        </span>
+                      </td>
+                      <td>{{item.createdAt}}</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+  </div>
+
+</section>

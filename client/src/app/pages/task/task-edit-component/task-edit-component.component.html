@@ -1,0 +1,59 @@
+<app-sidebar></app-sidebar>
+<section class="home-section">
+  <app-navbar></app-navbar>
+
+  <div class="home-content">
+    <div class="header">
+      <h1 class="header-title cardHeader" style="margin-left: 20px;color: #217f58; font-weight: 600;">
+        Edición de Tareas
+      </h1>
+      <p class="header-subtitle" style="margin-left: 20px;">Edita la tarea seleccionada.</p>
+    </div>
+    <div class="row">
+      <div class="col-12 col-xl-8">
+        <div class="card" style="margin-left: 15px;">
+          <div class="card-header" style="color: #fff; background-color: #217f58;">
+            <h5 class="card-title">Rellene el formulario correctamente.</h5>
+            <h6 class="card-subtitle text muted">Editando tarea: <strong>{{tarea.titulo}}</strong>.</h6>
+          </div>
+          <div class="card-body">
+            <form #taskForm="ngForm" (ngSubmit)="editar_task(taskForm)">
+              <div class="row">
+                <div class="col-lg-5">
+                  <label class="form label">Título de la tarea</label>
+                  <div class="form-group-input">
+                    <input type="text" class="form-control mt-2" id="titulo" placeholder="Titulo de la tarea"
+                      #titulo="ngModel" name="titulo" [(ngModel)]="tarea.titulo" required>
+                  </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                  <label for="customRange2" class="form-label">Dificultad actual: {{ dificul }}</label>
+                  <input type="range" class="form-range mt-2" min="0" max="5" id="customRange2" [(ngModel)]="dificul"
+                    name="dificultadRange">
+                </div>
+                <div class="col-lg-4" id="grupo__descripcion">
+                  <label class="form label">Descripción de la tarea</label>
+                  <div class="form-group-input">
+                    <input type="text" class="form-control mt-2" id="descripcion" placeholder="Descripción de la tarea"
+                      #descripcion="ngModel" name="descripcion" [(ngModel)]="tarea.descripcion" required>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn mt-3" style="background-color: #217f58; color: #fff;">Actualizar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-xl-4">
+        <div class="card-body ">
+          <div class="text-center mt-2">
+            <img src="../../../../assets/img/tareas.png" alt="Imagen Producto"
+              class="rounded-circle img-responsive mt-2 mx-auto" width="300" height="300">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
